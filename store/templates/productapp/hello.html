@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'productapp/base.html' %}
+{% block content %}
+<div class="jumbotron">
+{% if request.session.username %}
+<center><h1>Hello {{ request.session.username }}!</h1>
+<button type="submit" class="btn btn-success"><a href = "{% url 'productapp:logout' %}" style="color: #fff">Logout</a></button></center>
+{% else %}
+<center><h1>Oops!!! You are not logged in</h1></center>
+{% endif %}
+</div>
+{% endblock %}
